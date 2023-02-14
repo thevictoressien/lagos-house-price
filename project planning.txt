@@ -1,0 +1,48 @@
+-scrape data from the internet
+
+-clean data
+-EDA
+
+As the code provided in the initial question is for scraping data and writing it to a CSV file, I don't have access to the data that was scraped. Therefore, I cannot perform exploratory data analysis (EDA) on the data directly. However, I can provide some general guidance on what an EDA might entail and what insights it could potentially uncover.
+
+EDA is the process of analyzing and summarizing data sets to identify patterns, relationships, and trends in the data. The purpose of EDA is to generate insights into the data that can be used to inform further analysis or decision making.
+
+In the case of real estate data, an EDA could involve looking at various aspects of the data, such as:
+
+Property location: Are there certain areas that have more properties listed for sale than others? What is the average price of properties in each location? Are there any noticeable trends in price or availability over time?
+
+Property characteristics: What are the most common property types (e.g. single-family homes, apartments, townhouses)? How many bedrooms and bathrooms are most common in the listings? Is there any relationship between property size and price?
+
+Time trends: How does the number of listings and average price change over time? Are there seasonal trends in the market?
+
+Data completeness and quality: Are there any missing values or outliers in the data? Are there any inconsistencies or errors in the data that need to be addressed?
+
+By exploring these and other questions, an EDA could potentially uncover valuable insights into the real estate market that could be used to inform further analysis or decision-making.
+
+Analyze the distribution of property prices: One way to do this would be to create a histogram of the prices to see the frequency distribution of prices. Another way could be to calculate summary statistics like mean, median, and standard deviation.
+
+Explore the distribution of property types: This can be done by creating a bar chart of the different property types to see which type is most common.
+
+Analyze the distribution of bedrooms, bathrooms, and toilets: Similar to analyzing the distribution of property types, creating histograms or bar charts can help you understand the most common number of bedrooms, bathrooms, and toilets in the listings.
+
+Analyze the most popular locations: You could create a bar chart of the different locations to see which locations have the highest number of listings.
+
+Identify correlations between variables: You could explore if there are any relationships between the different variables in the data. For example, you could see if there is a correlation between the number of bedrooms and the price of the property. This could be done by creating a scatterplot of the two variables and calculating a correlation coefficient.
+
+Examine the relationship between property size and price: You could explore the relationship between the number of bedrooms or bathrooms and the price of the property. This could be done by creating scatterplots of the variables and examining the trendline.
+
+Check for data completeness and quality: You could explore the dataset for missing values and outliers. If you find missing data, you may need to impute values, while outliers may need to be removed or treated in some way.
+
+
+
+
+
+-ml problem statement
+-model selection
+-model building
+-deployment
+-documentation
+
+
+
+

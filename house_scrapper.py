@@ -45,7 +45,7 @@ def house_scrapper():
     csv_file = open("lag_house_11.csv", "w", newline="")
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
-        ["Description", "Location", "Beds", "Baths", "Toilets", "Price"]
+        ["Description","Title", "Location", "Beds", "Baths","Is_new", "Is_furnished", "Is_serviced", "Toilets", "Price"]
     )
 
     # supply url and headers dictionary
@@ -56,7 +56,7 @@ def house_scrapper():
         "Connection": "keep-alive",
     }
 
-    for page in range(1):
+    for page in range(2):
         # make a request to the website and get the content
         try:
             req = requests.get(url + str(page), headers=headers)
@@ -71,6 +71,12 @@ def house_scrapper():
         listings = soup.find_all("div", class_="single-room-sale listings-property")
         # loop through each listing and extract relevant data
         for listing in listings:
+            if "Land" in listing.find("h3", class_="listings-property-title2").text:
+                continue
+            else:
+                description = (
+                    listing.find("h3", class_="listings-property-title2").text
+                    )
             if listing.find(class_="listings-property-title") == None:
                 continue
             else:
@@ -98,7 +104,19 @@ def house_scrapper():
                 .span.find_all_next()[3]
                 .text.split(" ")[0]
             )
-            csv_writer.writerow([title, location, beds, baths, toilets, price])
+            if listing.find("a", href="/property-for-sale/is-new"):
+                is_new = 1
+            else:
+                is_new = 0
+            if listing.find("a", href="/property-for-sale/is-furnished"):
+                is_furnished = 1
+            else:
+                is_furnished = 0
+            if listing.find("a", href="/property-for-sale/is-serviced"):
+                is_serviced = 1
+            else:
+                is_serviced = 0
+            csv_writer.writerow([description, title, location, beds, baths, toilets, is_new, is_furnished, is_serviced, price])
 
     csv_file.close()
 

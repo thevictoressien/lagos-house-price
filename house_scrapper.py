@@ -45,7 +45,7 @@ def house_scrapper():
     csv_file = open("lag_sale_4.csv", "w", newline="")
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
-        ["Description","Title", "Location", "Beds", "Baths","Is_new", "Is_furnished", "Is_serviced", "Toilets", "Price"]
+        ["Description","Title", "Location", "Beds", "Baths", "Toilets", "Is_new", "Is_furnished", "Is_serviced", "Price"]
     )
 
     # supply url and headers dictionary

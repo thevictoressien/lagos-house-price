@@ -44,7 +44,8 @@ def clean_data(dataframe):
     # loops through price column checks for values with dollar signs
     # if they exist split into two, dollar discarded then checked for other
     # special characters then typecast split portion into float and converted
-    # to naira by multiplying by rate other part of conditional handles the
+    # to naira by multiplying by rate
+    # other part of conditional handles the
     # price rows with no dollar signs
     dataframe["Price"] = [
         float(re.findall("\d+", val.split("$")[1])[0]) * 775

@@ -42,7 +42,7 @@ def house_scrapper():
     session.mount("https://", adapter)
 
     # open a csv file for writing
-    csv_file = open("lag_house_11.csv", "w", newline="")
+    csv_file = open("lag_sale_4.csv", "w", newline="")
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
         ["Description","Title", "Location", "Beds", "Baths","Is_new", "Is_furnished", "Is_serviced", "Toilets", "Price"]
@@ -56,10 +56,10 @@ def house_scrapper():
         "Connection": "keep-alive",
     }
 
-    for page in range(2):
+    for page in range(1001,1501):
         # make a request to the website and get the content
         try:
-            req = requests.get(url + str(page), headers=headers)
+            req = session.get(url + str(page), headers=headers)
         except requests.exceptions.RequestException as e:
             print(f"An error occurred while making the request: {e}")
             continue

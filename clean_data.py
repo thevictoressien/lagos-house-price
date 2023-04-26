@@ -72,7 +72,3 @@ def clean_data(dataframe):
     # save cleaned data to a new csv file
     dataframe.to_csv("cleaned_houses.csv", index=False)
 
-
-if __name__ == "__main__":
-    clean_data(lag)
-    print("Done.")

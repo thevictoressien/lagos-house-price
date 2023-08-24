@@ -54,20 +54,6 @@ def clean_data(dataframe):
         for val in dataframe.Price
     ]
 
-    # create new columns for location and house type and drop unnecessary columns
-    dataframe["locale"] = dataframe["Location"].apply(lambda x: x.split(" ")[-2])
-    dataframe["House_Type"] = dataframe["Description"].apply(lambda x: x.split(" ")[-3])
-    dataframe["State"] = dataframe["Location"].apply(lambda x: x.split(" ")[-1])
-    dataframe = dataframe[dataframe.House_Type.isin(["HOUSE", "APARTMENT"])]
-    dataframe = dataframe[dataframe.State == "Lagos"]
-    dataframe.drop(
-        [
-            "Description",
-            "State",
-        ],
-        axis=1,
-        inplace=True,
-    )
 
     # save cleaned data to a new csv file
     dataframe.to_csv("cleaned_houses.csv", index=False)
